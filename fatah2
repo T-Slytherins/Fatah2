@@ -31,7 +31,7 @@ BANNER = r"""
  ██║     ██║  ██║   ██║   ██║  ██║██║  ██║███████╗
  ╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 \033[0m
-\033[1;33m        Advanced Recon Suite  ·  v1.0.0\033[0m
+\033[1;33m        Advanced Recon Suite  ·  v2.0.0\033[0m
 \033[0;37m        Crafted by \033[1;35mPr0fessor SnApe\033[0m
 \033[0;90m  ─────────────────────────────────────────────
   Subdomain Discovery · Endpoint Crawl · Risk AI
