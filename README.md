@@ -8,11 +8,10 @@
  ██║     ██║  ██║   ██║   ██║  ██║██║  ██║███████╗
  ╚═╝     ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
- Advanced Recon Suite · v2.0.0
+ Advanced Recon Suite · v1.0.0
  Crafted by Pr0fessor SnApe
 ```
 
-[![CI](https://github.com/yourname/fatah2/actions/workflows/ci.yml/badge.svg)](https://github.com/yourname/fatah2/actions)
 [![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
@@ -152,10 +151,7 @@ pytest tests/ -v
 
 ## Contributing
 
-1. Fork → feature branch → PR
-2. All external calls must be mocked in tests
-3. No credentials or reports in commits
-
+No Contributions needed for this tool
 ---
 
 ## License
