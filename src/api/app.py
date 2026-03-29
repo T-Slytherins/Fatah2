@@ -36,14 +36,22 @@ _bearer = HTTPBearer(auto_error=False)
 def _verify(creds: HTTPAuthorizationCredentials = Security(_bearer)):
     token = os.environ.get("FATAH2_API_TOKEN", "")
 
-    if creds is None or not token or not secrets.compare_digest(creds.credentials, token):
+    # ❌ No credentials provided → 403 Forbidden
+    if creds is None:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Forbidden"
         )
 
-    return creds.credentials
+    # ❌ Invalid / wrong token → 401 Unauthorized
+    if not token or not secrets.compare_digest(creds.credentials, token):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid API token"
+        )
 
+    # ✅ Valid token
+    return creds.credentials
 
 # ── Job store ─────────────────────────────────────────────────────────────────
 
