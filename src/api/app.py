@@ -31,13 +31,17 @@ app = FastAPI(
     redoc_url="/api/v1/redoc",
 )
 
-_bearer = HTTPBearer()
+_bearer = HTTPBearer(auto_error=False)
 
 def _verify(creds: HTTPAuthorizationCredentials = Security(_bearer)):
     token = os.environ.get("FATAH2_API_TOKEN", "")
-    if not token or not secrets.compare_digest(creds.credentials, token):
-        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
-                            detail="Invalid or missing API token.")
+
+    if creds is None or not token or not secrets.compare_digest(creds.credentials, token):
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Forbidden"
+        )
+
     return creds.credentials
 
 
