@@ -24,7 +24,7 @@ class Target:
             raise ValueError(f"Invalid domain: '{self.domain}'")
         try:
             self.apex_ip = socket.gethostbyname(self.domain)
-        except socket.gaierror:
+        except Exception:
             self.apex_ip = None
 
     @property
